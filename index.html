@@ -1,9 +1,6 @@
-<!DOCTYPE html>
-<html>
+<!DOCTYPE html><html>
 <head>
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<style>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"><style>
 
 body{
 text-align:center;
@@ -36,33 +33,26 @@ background:gray;
 position:absolute;
 }
 
-.heart,.star{
+.heart{
 position:fixed;
-top:-30px;
-font-size:24px;
-animation:fall linear forwards;
+top:-40px;
+font-size:28px;
+animation:fall linear;
+}
+
+.sparkle{
+position:fixed;
+top:-40px;
+font-size:22px;
+animation:fall linear;
 }
 
 @keyframes fall{
-0%{
-transform:translateY(-10vh);
-opacity:1;
-}
-100%{
-transform:translateY(110vh);
-opacity:0;
-}
+0%{transform:translateY(-50px);}
+100%{transform:translateY(110vh);}
 }
 
-</style>
-
-</head>
-
-<body>
-
-<h2>Mrunal are you Dumb? 😜</h2>
-
-<button id="yes">Yes ✨</button>
+</style></head><body><h2>Mrunal are you Dumb? 😜</h2><button id="yes">Yes ✨</button>
 <button id="no">No 🙈</button>
 
 <script>
@@ -73,7 +63,6 @@ const yesBtn=document.getElementById("yes");
 function move(){
 let x=Math.random()*window.innerWidth;
 let y=Math.random()*window.innerHeight;
-
 noBtn.style.left=x+"px";
 noBtn.style.top=y+"px";
 }
@@ -85,7 +74,7 @@ yesBtn.onclick=function(){
 
 alert("You are cute 🥺");
 
-for(let i=0;i<40;i++){
+for(let i=0;i<7;i++){
 
 setTimeout(()=>{
 
@@ -93,37 +82,35 @@ let heart=document.createElement("div");
 heart.innerHTML="❤️";
 heart.className="heart";
 heart.style.left=Math.random()*100+"vw";
-heart.style.animationDuration=(3+Math.random()*3)+"s";
+heart.style.animationDuration=(3+Math.random()*2)+"s";
 
 document.body.appendChild(heart);
 
-setTimeout(()=>heart.remove(),6000);
+setTimeout(()=>heart.remove(),5000);
 
-},i*120);
+},i*300);
 
 }
 
-for(let i=0;i<40;i++){
+for(let i=0;i<10;i++){
 
 setTimeout(()=>{
 
-let star=document.createElement("div");
-star.innerHTML="⭐";
-star.className="star";
-star.style.left=Math.random()*100+"vw";
-star.style.animationDuration=(3+Math.random()*3)+"s";
+let sparkle=document.createElement("div");
+sparkle.innerHTML="✨";
+sparkle.className="sparkle";
+sparkle.style.left=Math.random()*100+"vw";
+sparkle.style.animationDuration=(2+Math.random()*2)+"s";
 
-document.body.appendChild(star);
+document.body.appendChild(sparkle);
 
-setTimeout(()=>star.remove(),6000);
+setTimeout(()=>sparkle.remove(),4000);
 
-},i*120);
-
-}
+},i*200);
 
 }
 
-</script>
+}
 
-</body>
+</script></body>
 </html>
