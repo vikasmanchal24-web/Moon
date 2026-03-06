@@ -1,13 +1,6 @@
 <!DOCTYPE html><html>
 <head>
-<meta name="viewport" content="width=device-width, initial-scale=1.0"><style>
-
-body{
-text-align:center;
-font-family:Arial;
-margin-top:120px;
-color:white;
-overflow:hidden;
+<meta name="viewport" content="width=
 background:black;
 }
 
@@ -35,88 +28,3 @@ color:white;
 }
 
 #no{
-background:gray;
-position:absolute;
-}
-
-.heart{
-position:fixed;
-top:-40px;
-font-size:28px;
-animation:fall linear;
-}
-
-.sparkle{
-position:fixed;
-top:-40px;
-font-size:22px;
-animation:fall linear;
-}
-
-@keyframes fall{
-0%{transform:translateY(-50px);}
-100%{transform:translateY(110vh);}
-}
-
-</style></head><body><img src="mrunal...jpg" class="bg"><h2>Mrunal are you Dumb? 😜</h2><button id="yes">Yes ✨</button>
-<button id="no">No 🙈</button>
-
-<script>
-
-const noBtn=document.getElementById("no");
-const yesBtn=document.getElementById("yes");
-
-function move(){
-let x=Math.random()*window.innerWidth;
-let y=Math.random()*window.innerHeight;
-noBtn.style.left=x+"px";
-noBtn.style.top=y+"px";
-}
-
-noBtn.addEventListener("mouseover",move);
-noBtn.addEventListener("touchstart",move);
-
-yesBtn.onclick=function(){
-
-alert("You are cute 🥺");
-
-for(let i=0;i<7;i++){
-
-setTimeout(()=>{
-
-let heart=document.createElement("div");
-heart.innerHTML="❤️";
-heart.className="heart";
-heart.style.left=Math.random()*100+"vw";
-heart.style.animationDuration=(3+Math.random()*2)+"s";
-
-document.body.appendChild(heart);
-
-setTimeout(()=>heart.remove(),5000);
-
-},i*300);
-
-}
-
-for(let i=0;i<10;i++){
-
-setTimeout(()=>{
-
-let sparkle=document.createElement("div");
-sparkle.innerHTML="✨";
-sparkle.className="sparkle";
-sparkle.style.left=Math.random()*100+"vw";
-sparkle.style.animationDuration=(2+Math.random()*2)+"s";
-
-document.body.appendChild(sparkle);
-
-setTimeout(()=>sparkle.remove(),4000);
-
-},i*200);
-
-}
-
-}
-
-</script></body>
-</html>
